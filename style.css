@@ -160,7 +160,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 6em; /* Keep the font size larger */
+    font-size: 6em; /* Increase the font size */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -178,5 +178,8 @@ footer {
   }
 }
 
+  nav ul li {
+    margin: 0 35px;
+  }
 
 

@@ -94,13 +94,12 @@ body {
   background: linear-gradient(135deg, #6B2DA9, #E2336E, #32A89B);
   background-size: 300% 300%;
   animation: gradient 30s ease infinite;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'VT323', monospace; /* Change the font family to VT323 */
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-width: 480px; /* Add a minimum width */
   margin: 0;
 }
 
@@ -121,7 +120,7 @@ h1 {
 
 
 nav {
-  font-size: 1.2em;
+  font-size: 1.8em;
   background-color: #5B2589;
   display: flex;
   justify-content: center;
@@ -162,7 +161,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 6em; /* Increase the font size */
+    font-size: 5em; /* Increase the font size */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -170,7 +169,7 @@ footer {
   }
 
   nav {
-    font-size: 0.9em;
+    font-size: 1.1em;
     height: 50px;
     top: -12%;
   }

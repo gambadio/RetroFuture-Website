@@ -4,8 +4,8 @@
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RetroFuture</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;700&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,28 +34,31 @@ function init() {
   let menuShown = false;
 
   h1.addEventListener('click', () => {
-    if (!menuShown) {
-      const isMobile = window.innerWidth <= 768;
-      h1.style.transition = 'all 1s ease-in-out';
+  if (!menuShown) {
+    const isMobile = window.innerWidth <= 768;
+    h1.style.transition = 'all 1s ease-in-out';
 
-      if (isMobile) {
-        h1.style.transform = 'translate(-50%, 0)';
-        h1.style.top = '4%';
-        h1.style.left = '50%';
-      } else {
-        h1.style.transform = 'translate(-50%, -50%) scale(0.3)';
-        h1.style.top = '7%';
-        h1.style.left = '10%';
-      }
-
-      setTimeout(() => {
-        menu.style.transition = 'top 1s ease-in-out';
-        menu.style.top = isMobile ? 'calc(0 + 4%)' : 'calc(7% + 4%)';
-      }, 1000);
-
-      menuShown = true;
+    if (isMobile) {
+      // Set a smaller top value to move the title closer to the top in mobile view
+      h1.style.transform = 'translate(-50%, 30)';
+      h1.style.top = '2%';
+      h1.style.left = '50%';
+    } else {
+      // Set a smaller top value to move the title closer to the top in desktop view
+      h1.style.transform = 'translate(-45%, -100%) scale(0.4)';
+      h1.style.top = '2%';
+      h1.style.left = '12%';
     }
-  });
+
+    setTimeout(() => {
+      menu.style.transition = 'top 1s ease-in-out';
+      menu.style.top = isMobile ? 'calc(10% + 4%)' : 'calc(3% + 4%)';
+    }, 1000);
+
+    menuShown = true;
+  }
+});
+
 }
 
 window.addEventListener('DOMContentLoaded', init);

@@ -34,34 +34,29 @@ function init() {
   let menuShown = false;
 
   h1.addEventListener('click', () => {
-  if (!menuShown) {
-    const isMobile = window.innerWidth <= 768;
-    h1.style.transition = 'all 1s ease-in-out';
-
-    if (isMobile) {
-      // Set a smaller top value to move the title closer to the top in mobile view
-      h1.style.transform = 'translate(-50%, 30)';
-      h1.style.top = '2%';
-      h1.style.left = '50%';
-    } else {
-      // Set a smaller top value to move the title closer to the top in desktop view
-      h1.style.transform = 'translate(-50%, -40%) scale(0.4)';
-      h1.style.top = '2%';
-      h1.style.left = '15%';
-    }
-
-    setTimeout(() => {
+    if (!menuShown) {
+      const isMobile = window.innerWidth <= 768;
+      h1.style.transition = 'all 1s ease-in-out';
       menu.style.transition = 'top 1s ease-in-out';
-      menu.style.top = isMobile ? 'calc(10% + 4%)' : 'calc(3% + 4%)';
-    }, 1000);
 
-    menuShown = true;
-  }
-});
+      menu.style.top = isMobile ? 'calc(5% + 4vh)' : 'calc(3% + 4vh)';
+      h1.style.left = isMobile ? '50%' : '15%';
 
+      const translateY = isMobile ? '0' : '-50%';
+      const scale = isMobile ? '1' : '0.4';
+      const translateYMenu = isMobile ? 'calc((10% + 4vh) - 14%)' : 'calc((3% + 4vh) - 3.5%)';
+
+      h1.style.transform = `translate(-50%, ${translateY}) scale(${scale})`;
+      h1.style.top = translateYMenu;
+
+      menuShown = true;
+    }
+  });
 }
 
 window.addEventListener('DOMContentLoaded', init);
+
+
 
 	</script>
 </body>

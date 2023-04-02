@@ -10,7 +10,8 @@
 </head>
 <body>
   <main>
-       <div class="artwork">
+    <img src="/TheCity.jfif" alt="The City" id="city-image" />
+    <div class="artwork">
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -31,6 +32,7 @@
 function init() {
   const h1 = document.querySelector('h1');
   const menu = document.getElementById('menu');
+  const cityImage = document.getElementById('city-image');
   let menuShown = false;
 
   h1.addEventListener('click', () => {
@@ -48,7 +50,10 @@ function init() {
 
       h1.style.transform = `translate(-50%, ${translateY}) scale(${scale})`;
       h1.style.top = translateYMenu;
-
+      cityImage.style.opacity = '1';
+      cityImage.style.right = '50%';
+      cityImage.style.transform = 'translate(50%, -50%)';
+      
       menuShown = true;
     }
   });

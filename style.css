@@ -184,4 +184,21 @@ footer {
     margin: 0 35px;
   }
 
-
+  #city-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 512px;
+    height: 512px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #city-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
